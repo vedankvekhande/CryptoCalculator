@@ -76,7 +76,7 @@ const CurrencyConverter = () => {
                 </select>
                 <br />
                 {convertedAmount && (
-                    <label htmlFor="convertedamount">{amount}  in {targetCurrency}</label>
+                    <label htmlFor="convertedamount">Rate in {targetCurrency}</label>
                 )}
                 {convertedAmount && (
                     <input type="text" id="convertedamount" value={convertedAmount} onChange={(e) => setAmount(e.target.value)} min="0" required />
