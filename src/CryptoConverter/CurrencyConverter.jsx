@@ -63,10 +63,9 @@ const CurrencyConverter = () => {
                         <option key={crypto.symbol} value={crypto.symbol}>{crypto.name}</option>
                     ))}
                 </select>
-                <br />
                 <label htmlFor="amount">Amount</label>
                 <input type="number" id="amount" value={amount} onChange={(e) => { setAmount(e.target.value);setConvertedAmount()}} min="0" required />
-                <br />
+              
                 <label htmlFor="targetCurrency">Target Currency</label>
                 <select id="targetCurrency" value={targetCurrency} onChange={(e) => {setTargetCurrency(e.target.value);setConvertedAmount()}}>
                     <option value="USD">USD</option>
@@ -74,14 +73,12 @@ const CurrencyConverter = () => {
                         <option key={code} value={code}>{code}</option>
                     ))}
                 </select>
-                <br />
                 {convertedAmount && (
                     <label htmlFor="convertedamount">Rate in {targetCurrency}</label>
                 )}
                 {convertedAmount && (
                     <input type="text" id="convertedamount" value={convertedAmount} onChange={(e) => setAmount(e.target.value)} min="0" required />
                 )}
-                <br />
                 <input type="submit" value="Convert" /> 
             </form>
             {error && <p>{error}</p>}
