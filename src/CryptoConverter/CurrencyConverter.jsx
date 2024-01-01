@@ -57,7 +57,7 @@ const CurrencyConverter = () => {
         <div>
             <h1>Crypto Currency Converter</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="sourceCrypto">Source Cryptocurrency:</label>
+                <label htmlFor="sourceCrypto">Source Cryptocurrency</label>
                 <select id="sourceCrypto" value={sourceCrypto} onChange={(e) => {setSourceCrypto(e.target.value); handleCryptoChange(e.target.value)}} required>
                     <option value="">Select Cryptocurrency</option>
                     {cryptos.map(crypto => (
@@ -77,7 +77,7 @@ const CurrencyConverter = () => {
                 </select>
                 <br />
                 {convertedAmount && (
-                    <label htmlFor="convertedamount">{amount} {sourceCrypto} in {targetCurrency}:</label>
+                    <label htmlFor="convertedamount">{amount}  in {targetCurrency}</label>
                 )}
                 {convertedAmount && (
                     <input type="text" id="convertedamount" value={convertedAmount} onChange={(e) => setAmount(e.target.value)} min="0" required />
