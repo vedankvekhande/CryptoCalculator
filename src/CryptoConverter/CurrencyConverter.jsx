@@ -33,7 +33,7 @@ const CurrencyConverter = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        axios.post(`${API_BASE_URL}/convert-currency`, {
+        axios.post(`${API_BASE_URL}convert-currency`, {
             'sourceCrypto': sourceCrypto,
             'amount': amount,
             'targetCurrency': targetCurrency,
