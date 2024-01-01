@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CurrencyConverter.css';
 
-const API_BASE_URL = 'http://localhost:4000/';
+// const API_BASE_URL = 'http://localhost:4000/';
+const API_BASE_URL = 'https://crypto-calculator-api.onrender.com/'
 
 const CurrencyConverter = () => {
     const [cryptos, setCryptos] = useState([]);
@@ -27,13 +28,12 @@ const CurrencyConverter = () => {
     }, []);
 
     useEffect(() => {
-        console.log(targetCurrency);
     }, [targetCurrency]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        axios.post(`http://localhost:4000/convert-currency`, {
+        axios.post(`${API_BASE_URL}/convert-currency`, {
             'sourceCrypto': sourceCrypto,
             'amount': amount,
             'targetCurrency': targetCurrency,
@@ -41,7 +41,6 @@ const CurrencyConverter = () => {
         })
         .then(response => {
             setConvertedAmount(response.data);
-            console.log(response);
         })
         .catch(error => {
             setError('Error performing currency conversion');
