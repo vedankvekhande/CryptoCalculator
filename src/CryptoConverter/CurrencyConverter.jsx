@@ -65,10 +65,10 @@ const CurrencyConverter = () => {
                 </select>
                 <br />
                 <label htmlFor="amount">Amount</label>
-                <input type="number" id="amount" value={amount} onChange={(e) => setAmount(e.target.value)} min="0" required />
+                <input type="number" id="amount" value={amount} onChange={(e) => { setAmount(e.target.value);setConvertedAmount()}} min="0" required />
                 <br />
                 <label htmlFor="targetCurrency">Target Currency</label>
-                <select id="targetCurrency" value={targetCurrency} onChange={(e) => setTargetCurrency(e.target.value)}>
+                <select id="targetCurrency" value={targetCurrency} onChange={(e) => {setTargetCurrency(e.target.value);setConvertedAmount()}}>
                     <option value="USD">USD</option>
                     {currencyCodes.map(code => (
                         <option key={code} value={code}>{code}</option>
