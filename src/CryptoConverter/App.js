@@ -45,6 +45,15 @@ app.post('/convert-currency', async (req, res) => {
     }
 });
 
+app.get('/', async (req, res) => {
+    try {
+        res.send('Server is running');
+    } catch (error) {
+        res.status(500).json({ error: 'Error displaying server status' });
+    }
+});
+
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
