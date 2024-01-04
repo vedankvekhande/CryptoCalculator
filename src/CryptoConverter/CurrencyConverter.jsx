@@ -28,7 +28,8 @@ const CurrencyConverter = () => {
     }, []);
 
     useEffect(() => {
-    }, [targetCurrency]);
+        setConvertedAmount()
+    }, [targetCurrency,sourceCrypto]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
